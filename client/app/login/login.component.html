@@ -1,0 +1,36 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<div id="leftbox" style="display: inline;">
+  <img src="https://media.gettyimages.com/photos/campaigners-carry-boxes-of-petitio
+    ns-for-the-peoples-vote-and-the-picture-id1067932742?s=2048x2048" height="60%" width="68%">
+</div>
+<div class="card" id="leftbox" style="width: 30%;float: right;margin-top: 130px;">
+  <h4 class="card-header">Sign in</h4>
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="input-group" [ngClass]="setClassEmail()">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-envelope"></i>
+          </span>
+        </div>
+        <input class="form-control" type="email" name="email"
+               formControlName="email" placeholder="Email" autofocus>
+      </div>
+      <div class="input-group" [ngClass]="setClassPassword()">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-key"></i>
+          </span>
+        </div>
+        <input class="form-control" type="password" name="password"
+               formControlName="password" placeholder="Password">
+      </div>
+      <button class="btn btn-primary" style="margin-left: 160px;" type="submit" [disabled]="!loginForm.valid">
+        <i class="fa fa-sign-in"></i> Login
+      </button><br><br><br>
+     <p style="text-align: center;"> Don't have an account? Click <a routerLink="/register">here</a> to create one</p>
+    </form>
+  </div>
+</div>
+<br><br>

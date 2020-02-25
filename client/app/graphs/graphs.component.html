@@ -1,0 +1,14 @@
+<div><h1 style="text-align:center">Pie Chart For Petitions &nbsp; 
+</h1>
+<br><br><br>
+<div style="display: block" align="center">
+<canvas baseChart id="pie" 
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+</div>
+<br><br><br><br><br><br> 

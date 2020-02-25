@@ -1,0 +1,86 @@
+<div class="container-fluid">
+
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background: #ec2e22;">
+    <button class="navbar-toggler" type="button"
+            data-toggle="collapse" data-target="#navbar-supported-content"
+            aria-controls="navbar-supported-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-supported-content">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+           <h5>petitions.org</h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/start-a-petition" class="nav-link" routerLinkActive="active">
+             Start a petition
+          </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/my-petitions" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+               My petitions
+            </a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="/browse-petitions/popular" class="nav-link" routerLinkActive="active">
+                 Browse
+              </a>
+            </li>
+
+              <li class="nav-item">
+                <a routerLink="/graphs" class="nav-link" routerLinkActive="active" >
+                 Statistics
+                </a>
+              </li>
+      
+              <li class="nav-item">
+                <a routerLink="/chatbot" class="nav-link" routerLinkActive="active" >
+                  <i class="fa fa-chatbot"></i> Chat
+                </a>
+              </li>
+      
+              <li class="nav-item">
+                <a routerLink="/subscribe" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+                  <i class="fa fa-bell"></i> Donate
+                </a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+         <a routerLink="/account" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+            <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/admin" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+            <i class="fa fa-lock"></i> Admin
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+            <i class="fa fa-sign-in"></i> Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/register" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+            <i class="fa fa-user-plus"></i> Register
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+            <i class="fa fa-sign-out"></i> Logout
+          </a>
+        </li>
+      </ul>
+
+      
+    </div>
+  </nav><br>
+
+  <router-outlet></router-outlet>
+
+</div>
+<br>
+<app-footer></app-footer>

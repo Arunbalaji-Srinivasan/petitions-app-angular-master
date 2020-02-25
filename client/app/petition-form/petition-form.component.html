@@ -1,0 +1,89 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<div id="video" >
+  <video autoplay muted loop id="care2SpotlightVideo" width="100%" height="40%">
+    <source src="//dingo.care2.com/c2/care2_vid.m4v" type="video/mp4">
+</video></div>
+
+<div class="container" style="position: relative;">
+ 
+  <h3 style="text-align: center;color: #ec2e22;font-family:sofia_pro_semi_boldregular;">START YOUR PETITION</h3>
+  <h5 style="text-align: center;color: #ec2e22;font-family:sofia_pro_lightregular;">In just minutes, we’ll help you build your campaign</h5><br>
+
+  <form [formGroup]="submitPetitionForm" (ngSubmit)="submitPetition()" ngNativeValidate >
+    <div class="form-group">
+      <label for="title">Write your petition title</label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        id="name"
+        formControlName="title"
+        placeholder="What do you want to achieve?"
+        required
+        
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="target">Great! Who has the power to make this change?</label>
+      <input
+        type="text"
+        name="target"
+        class="form-control"
+        id="alterEgo"
+        formControlName="target"
+        placeholder="Petition target (e.g., Tata or your mayor)"
+      required/>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Explain the problem you want to solve</label>
+      <textarea
+        name="description"
+        formControlName="description"
+        id="message"
+        formControlName="description"
+        cols="30"
+        rows="11"
+        class="form-control"
+        placeholder="Write your notes or questions here..."
+      required></textarea>
+    </div>
+    <!-- <div class="form-group">
+                    <label for="alterEgo">Add a photo or video</label>
+                    <input type="text" class="form-control" id="alterEgo">
+                  </div> -->
+                  <!--upload image start-->
+                  <!-- <div class="col-md-12" *ngIf="progress">
+                      <div class="progress form-group">
+                          <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                              [style.width.%]="progress">
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="col-md-12">
+                      <div class="fileupload" appDragDropFileUpload (click)="fileField.click()"
+                          (fileDropped)="upload($event)">
+                          <span class="ddinfo">Choose a file or drag here</span>
+                          <input type="file" name="avatars" #fileField (change)="upload($event.target.files)" hidden multiple>
+                      </div>
+                  </div>
+      
+                  <div class="col-md-12">
+                      <div class="image-list" *ngFor="let file of fileArr; let i = index">
+                          <div class="profile">
+                              <img [src]="sanitize(file['url'])" alt="">
+                          </div>
+                          <p>{{file.item.name}}</p>
+                      </div>
+                      <p class="message">{{msg}}</p>
+                  </div>    -->
+                  <!--end of upload image-->
+    <button type="submit" class="btn btn-login">Submit</button>
+  </form>
+</div><br><br><br><br><br><br><br>
+<!-- <br>
+    <app-footer></app-footer> -->
+<br><br><br><br><br>

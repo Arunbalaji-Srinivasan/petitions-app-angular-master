@@ -1,0 +1,20 @@
+<h1>Chat with Me</h1>
+
+<div>
+  <img
+    id="imagechat"
+    src="https://images-platform.99static.com/jwnEu5C8vt1HATQ5ikjw_zxN3Lw=/0x1:1563x1564/500x500/top/smart/99designs-contests-attachments/95/95977/attachment_95977640"
+    alt="Chat" />
+<label for="nameField"><b>Your Message &nbsp; &nbsp;</b></label>
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" id="chattext" />&nbsp;&nbsp;&nbsp;
+<button (click)="sendMessage()" id="btn">Send</button>
+
+<ng-container *ngFor="let message of messages | async">
+  <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                     'to':   message.sentBy === 'user' }">
+     {{ message.content }}
+   </div>
+ 
+ </ng-container>
+ 
+</div>

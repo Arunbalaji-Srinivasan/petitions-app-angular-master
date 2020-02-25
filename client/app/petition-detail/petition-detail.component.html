@@ -1,0 +1,50 @@
+<div class="container">
+  <!-- <div class="browse-container"> -->
+  <div class="row">
+    <h1 class="petition-title">{{ petition.title }}</h1>
+  </div>
+  <div class="row">
+      <div class="col-sm-8 col-md-8">
+      <img src = "./../../assets/register.jpg" alt ="" width = "600" height = "350"/>
+    </div>
+    <div class="col-sm-4 col-md-4">
+        
+            <button type="button" class="btn btn-danger" (click)= "voteForPetition(petition)" style="width: 100%;">Sign this petition</button>
+    </div>
+  </div>
+  <div class="row">
+    <strong class="type-weak"><u>{{user}}</u> startes this petition to <u>{{petition.target}}</u>.</strong>
+  </div>
+  <div class="row"><p style="white-space: pre-line;">
+    {{ petition.description }}
+    </p>
+  </div>
+  <!-- <div class="row">
+        <button type="button" class="btn btn-danger" (click)= "voteForPetition(petition)">Sign this petition</button>
+  </div> -->
+
+  <!-- <div class="progress">
+    <div
+      class="progress-bar progress-bar-striped"
+      role="progressbar"
+      aria-valuenow="10"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [style.width]="calProgress(petition) + '%'"
+      [ngClass]="{
+        'progress-easy': calProgress(petition) <= 25,
+        'progress-medium':
+          calProgress(petition) > 25 && calProgress(petition) <= 50,
+        'progress-hard':
+          calProgress(petition) > 50 && calProgress(petition) <= 75,
+        'progress-very-hard': calProgress(petition) > 75
+      }"
+    ></div>
+  </div> -->
+
+  <!--
+   
+  </div> -->
+  <!-- </div> -->
+  <!-- </div> -->
+</div>
